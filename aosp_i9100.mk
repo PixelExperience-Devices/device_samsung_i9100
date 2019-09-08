@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2012 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,29 +11,32 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
 # Release name
 PRODUCT_RELEASE_NAME := GT-I9100
 
-# Bootanimation
-TARGET_SCREEN_HEIGHT := 800
-TARGET_SCREEN_WIDTH := 480
-TARGET_BOOTANIMATION_HALF_RES := true
-
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, device/samsung/i9100/i9100.mk)
+
+# Inherit from i9100 device
+$(call inherit-product, device/samsung/i9100/device.mk)
+
+# Inherit some common PixelExperience stuff.
+TARGET_BOOT_ANIMATION_RES := 720
+TARGET_BOOTANIMATION_HALF_RES := true
+TARGET_GAPPS_ARCH := arm
+TARGET_MINIMAL_APPS := true
+CUSTOM_BUILD_TYPE := OFFICIAL
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := i9100
-PRODUCT_NAME := lineage_i9100
+PRODUCT_NAME := aosp_i9100
 PRODUCT_BRAND := Samsung
-PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := GT-I9100
+PRODUCT_MANUFACTURER := samsung
+
+PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 # Set build fingerprint / ID / Prduct Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=GT-I9100 TARGET_DEVICE=GT-I9100

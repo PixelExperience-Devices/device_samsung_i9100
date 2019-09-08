@@ -1,0 +1,26 @@
+[
+    {
+        "repository":   "PixelExperience-Devices/device_samsung_galaxys2-common",
+        "target_path":  "device/samsung/galaxys2-common",
+        "remote":  "github",
+        "revision":  "pie"
+    },
+    {
+        "repository":   "linusdan/hardware_samsung",
+        "target_path":  "hardware/samsung",
+        "remote":  "github",
+        "revision":  "pie"
+    },
+    {
+        "repository":   "linusdan/vendor_samsung",
+        "target_path":  "vendor/samsung",
+        "remote":  "github",
+        "revision":  "pie"
+    },
+    {
+        "repository":   "CarbonROM/android_kernel_samsung_smdk4412",
+        "target_path":  "kernel/samsung/smdk4412",
+        "remote":  "github",
+        "revision":  "cr-7.0"
+    }
+]
