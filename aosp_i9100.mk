@@ -24,6 +24,7 @@ $(call inherit-product, device/samsung/i9100/device.mk)
 # Inherit some common PixelExperience stuff.
 TARGET_BOOT_ANIMATION_RES := 720
 TARGET_BOOTANIMATION_HALF_RES := true
+TARGET_USE_OLD_SOUND_PICKER := true
 TARGET_GAPPS_ARCH := arm
 TARGET_MINIMAL_APPS := true
 CUSTOM_BUILD_TYPE := OFFICIAL
